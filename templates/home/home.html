@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Pagina Inicial {% endblock%}
+
+{% block content %}
+<div class="row mb-5">
+    <h1 >O que deseja fazer?</h1>
+</div>
+<div class="row">
+    
+    <div class="col">
+        <a href="" class="btn button shadow">Consultar</a>
+    </div>
+    
+    <div class="col">
+        <a href="{% url 'admin:index' %}" class="btn button shadow">cadastrar novo</a> 
+    </div>
+</div>
+
+
+{% endblock %} 
