@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Consulta {% endblock %}
+
+
+{% block content %} 
+<h1>Consulta de Ativos</h1>
+    
+    <form method="GET">
+       <!--  <label>Unidade:</label>
+        <input type="text" name="unidade">
+        
+        <label>Departamento:</label>
+        <input type="text" name="departamento">
+        
+        <label>Tipo:</label>
+        <input type="text" name="tipo">
+        
+        <label>Fabricante:</label>
+        <input type="text" name="fabricante">
+        
+        <label>IP:</label>
+        <input type="text" name="ip">
+        
+        <label>MAC Address:</label>
+        <input type="text" name="mac"> -->
+        {% csrf_token %}
+        {{ form }}
+        
+        <button type="submit">Buscar</button>
+    </form>
+
+    <hr>
+    <h2 class="mt-3">Resultados:</h2>
+    <ul>
+        {% for ativo in ativos %}
+            <li>{{ ativo.nome }} - {{ ativo.ip }} - {{ ativo.unidade }}</li>
+        {% empty %}
+            <li>Nenhum ativo encontrado.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
