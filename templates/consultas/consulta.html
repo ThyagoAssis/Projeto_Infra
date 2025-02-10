@@ -4,7 +4,7 @@
 
 
 {% block content %} 
-<h1>Consulta de Ativos</h1>
+<h1>Consulta de Ativos</h1>    
     
     <form method="GET">
        <!--  <label>Unidade:</label>
@@ -27,16 +27,18 @@
         {% csrf_token %}
         {{ form }}
         
-        <button class="btn btn-primary" type="submit">Buscar</button>
+        <button type="submit">Buscar</button>
     </form>
 
-    <hr>
-    <h2 class="mt-3">Resultados:</h2>
-    <ul>
-        {% for ativo in ativos %}
-            <li>{{ ativo.nome }} - {{ ativo.ip }} - {{ ativo.unidade }}</li>
-        {% empty %}
-            <li>Nenhum ativo encontrado.</li>
-        {% endfor %}
-    </ul>
+    <hr>    
+        <h2 class="mt-3">Resultados:</h2>
+        <ul>
+            
+            {% for ativo in ativos %}
+                <li>{{ ativo.nome }} - {{ ativo.ip }} - {{ ativo.unidade }}</li>
+            {% empty %}
+                <li>Nenhum ativo encontrado.</li>
+            {% endfor %}
+        </ul>
+    
 {% endblock %}
