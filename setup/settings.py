@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1%=7-qdtz3d0ku@h_ry$=lw3@s__y(bmsz!bv+6qai!aev$ltp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://ativos-infra.onrender.com']
 
 
 # Application definition
