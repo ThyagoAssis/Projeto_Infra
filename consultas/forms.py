@@ -8,14 +8,15 @@ class ConsultaForm(forms.ModelForm):
 
         labels = {
             'nome': 'Nome do Ativo:',
+            'departamento': 'Departamento',
             'tipo': 'Tipo:',
             'fabricante': 'Fabricante:',
             'mac_address': 'Endereço MAC:',
         }
 
         widgets = {
-                "nome": forms.TextInput(attrs={"class": "form-control"}),
-                "tipo": forms.Select(attrs={"class": "form-control",}),
-                "fabricante": forms.Select(attrs={"class": "form-control",}),
-                "mac_address": forms.TextInput(attrs={"class": "form-control"}),
-            }
+            "nome": forms.TextInput(attrs={"class": "form-control"}),
+            "tipo": forms.Select(attrs={"class": "form-control",}),
+            "fabricante": forms.Select(attrs={"class": "form-control",}),
+            "mac_address": forms.TextInput(attrs={"class": "form-control"}),
+        }

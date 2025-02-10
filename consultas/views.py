@@ -15,18 +15,19 @@ def consultar_ativos(request):
     ip = request.GET.get('ip')
     mac = request.GET.get('mac')
 
-    if unidade_id:
-        ativos = ativos.filter(unidade_id=unidade_id)
-    if departamento_id:
-        ativos = ativos.filter(departamento_id=departamento_id)
-    if tipo_id:
-        ativos = ativos.filter(tipo_id=tipo_id)
-    if fabricante_id:
-        ativos = ativos.filter(fabricante_id=fabricante_id)
-    if ip:
-        ativos = ativos.filter(ip=ip)
-    if mac:
-        ativos = ativos.filter(mac_address__icontains=mac)
-
-
-    return render(request, 'consultas/consulta.html', {'ativos': ativos, 'form': form})
+    if request.method.GET:        
+        if unidade_id:
+            ativos = ativos.filter(unidade_id=unidade_id)
+        if departamento_id:
+            ativos = ativos.filter(departamento_id=departamento_id)
+        if tipo_id:
+            ativos = ativos.filter(tipo_id=tipo_id)
+        if fabricante_id:
+            ativos = ativos.filter(fabricante_id=fabricante_id)
+        if ip:
+            ativos = ativos.filter(ip=ip)
+        if mac:
+            ativos = ativos.filter(mac_address__icontains=mac)
+        return render(request, 'consultas/consulta.html', {'ativos': ativos, 'form': form})
+    else:
+        return render(request, 'consultas/consulta.html', {'ativos': ativos, 'form': form})
